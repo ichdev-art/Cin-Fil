@@ -104,9 +104,10 @@ a {
     display: flex;
     gap: 1.2rem;
     color: #032541;
+    margin-bottom: 1rem;
 }
 
-.selected {
+.swipe {
     position: absolute;
     border: 2px solid black;
     border-radius: 40px;
@@ -116,17 +117,85 @@ a {
     z-index: -1;
 }
 
-.movie {}
-
-
-.note {
-    position: absolute;
-    border: 3px solid black;
-    border-radius: 100px;
-    height: 3rem;
-    width: 3rem;
+.hidden {
+    transform: translateX(100%);
+    opacity: 0;
 }
 
-.note img {
+.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+#containerMovie {
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+    gap: 0.3rem;
+}
+
+.note {
+    border-radius: 100px;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-family: "Cinzel", sans-serif;
+    font-weight: bold;
+    background: rgb(63, 94, 251);
+    background: linear-gradient(87deg, rgba(63, 94, 251, 1) 2%, rgba(252, 70, 107, 1) 76%);
+    color: white;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardMovie {
+    background: #06345a;
     position: relative;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+}
+
+.mooveNote {
+    display: flex;
+    justify-content: end;
+    position: absolute;
+    bottom: 0.2rem;
+    right: 0.2rem;
+}
+
+img {
+    width: 10rem;
+    height: 15rem;
+    border-radius: 15px;
+}
+
+.movie h3 {
+    font-family: "Cinzel", sans-serif;
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.movie p {
+    text-align: start;
+    color: white;
+    margin-top: 1rem;
+}
+
+::-webkit-scrollbar {
+    background: white;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f3f2f1;
 }
