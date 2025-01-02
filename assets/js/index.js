@@ -10,21 +10,31 @@ fetch('movies.json')
                 for (let item of data[objProperty]) {
                     console.log(item);
                     moment.locale("fr")
-                    document.getElementById("containerMovie").innerHTML +=
-                        `<section class="cardMovie">
-                            <div class="movie">
-                                <img src="https://image.tmdb.org/t/p/original/${item.poster_path}" alt="${item.title}">
-                                <h3>${item.title}</h3>
-                                <p>${moment(item.release_date).format("LL")}</p>
-                                <div class="mooveNote">
+                    const cardHtml = `
+                    <section class="cardMovie">
+                        <div class="movie">
+                            <img src="https://image.tmdb.org/t/p/original/${item.poster_path}" alt="${item.title}">
+                            <h3>${item.title}</h3>
+                            <p>${moment(item.release_date).format("LL")}</p>
+                            <div class="mooveNote">
                                 <div class="note" title="${item.vote_count} votes">${item.vote_average}</div>
-                                </div>
                             </div>
-                        </section>`;
+                        </div>
+                    </section>`;
+                    document.getElementById("containerMovie").innerHTML += cardHtml;
                 }
+
+                const cards = document.querySelectorAll(".cardMovie");
+                cards.forEach((card, index) => {
+                    card.addEventListener("click", () => {
+                        const movieTitle = encodeURIComponent(data[objProperty][index].title)
+                        window.location.href = `movie.html?title=${movieTitle}`;
+                    });
+                });
             }
         }
-    })
+    }
+    )
     .catch(error => console.error('Erreur :', error));
 
 document.getElementById("containerMovie").addEventListener("wheel", (e) => {
