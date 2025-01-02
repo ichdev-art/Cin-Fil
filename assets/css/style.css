@@ -88,35 +88,6 @@ a {
     background: linear-gradient(87deg, rgba(63, 94, 251, 1) 2%, rgba(252, 70, 107, 1) 76%);
 }
 
-.Plusvu {
-    display: flex;
-    gap: 3rem;
-    margin-top: 2rem;
-    margin-left: 1rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.navTend {
-    border: 1px solid black;
-    border-radius: 40px;
-    padding: 0.6rem;
-    display: flex;
-    gap: 1.2rem;
-    color: #032541;
-    margin-bottom: 1rem;
-}
-
-.swipe {
-    position: absolute;
-    border: 2px solid black;
-    border-radius: 40px;
-    height: 2.8rem;
-    width: 6.8rem;
-    background: black;
-    z-index: -1;
-}
-
 .hidden {
     transform: translateX(100%);
     opacity: 0;
@@ -133,6 +104,7 @@ a {
     overflow-x: scroll;
     width: 100%;
     gap: 0.3rem;
+    margin-top: 1rem;
 }
 
 .note {
