@@ -9,13 +9,13 @@ fetch('movies.json')
             if (Array.isArray(data[objProperty])) {
                 for (let item of data[objProperty]) {
                     console.log(item);
-
+                    moment.locale("fr")
                     document.getElementById("containerMovie").innerHTML +=
                         `<section class="cardMovie">
                             <div class="movie">
                                 <img src="https://image.tmdb.org/t/p/original/${item.poster_path}" alt="${item.title}">
                                 <h3>${item.title}</h3>
-                                <p>${item.release_date}</p>
+                                <p>${moment(item.release_date).format("LL")}</p>
                                 <div class="mooveNote">
                                 <div class="note" title="${item.vote_count} votes">${item.vote_average}</div>
                                 </div>
@@ -27,13 +27,7 @@ fetch('movies.json')
     })
     .catch(error => console.error('Erreur :', error));
 
-document.querySelector(".swipe").addEventListener("click", () => {
-    const tendance = document.querySelector(".tend")
-    const week = document.querySelector(".tendweek")
-
-    tendance.classList.add("hidden")
-    tendance.classList.remove("visible")
-
-    week.classList.add("visible")
-    week.classList.add("hidden")
+document.getElementById("containerMovie").addEventListener("wheel", (e) => {
+    e.preventDefault();
+    e.currentTarget.scrollLeft += e.deltaY;
 })
