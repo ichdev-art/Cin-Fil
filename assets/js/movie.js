@@ -18,6 +18,19 @@ fetch("credits.json")
                         for (let item of data[objProperty]) {
                             console.log(item);
                             moment.locale("fr")
+                            const descriptif = `<div class="idescriptif">
+                    <a href="https://www.facebook.com/gaumont/?locale=fr_FR"><span><i
+                                class="fa-brands fa-facebook"></i></span></a>
+                    <a href="https://github.com/ichdev-art"><span><i class="fa-brands fa-github"></i></span></a>
+                    <a href="https://www.gifsanimes.com/data/media/77/fantome-image-animee-0008.gif"><span><i
+                                class="fa-solid fa-ghost"></i></span></a>
+                </div>
+                <p class="Tb">Titre d'origine</p>
+                <p>${data.original_title}</p>
+                <p class="Tb">Statut</p>
+                <p>Film sorti</p>
+                <p class="Tb">Langue d'origine</p>
+                <p>${data.original_language}</p>`
                             const cardHtml = `<div class="containerTeteLeft">
                 <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="image du film">
             </div>
@@ -74,6 +87,7 @@ fetch("credits.json")
             </div >
     `
                             }
+                            document.querySelector(".descriptif").innerHTML = descriptif;
                         }
                     }
 

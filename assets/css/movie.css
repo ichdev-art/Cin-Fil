@@ -61,7 +61,6 @@ a {
 .containerTeteRight {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     justify-content: space-between;
 }
 
@@ -151,8 +150,8 @@ button {
     justify-content: space-between;
     align-items: center;
     margin-right: 5rem;
-    overflow: hidden;
     overflow-x: scroll;
+    position: relative;
 }
 
 .idescriptif a {
@@ -167,6 +166,7 @@ button {
 
 .idescriptif {
     margin-bottom: 1rem;
+    display: flex;
 }
 
 .descriptif p {
@@ -220,4 +220,13 @@ footer h3 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #fffefe;
+}
+
+.Tb {
+    font-weight: bold;
+}
+
+.descriptif {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
