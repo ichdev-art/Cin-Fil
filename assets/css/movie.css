@@ -65,9 +65,6 @@ a {
     justify-content: space-between;
 }
 
-
-.textTile {}
-
 .iage {
     border: 1px solid black;
     margin-right: 0.5rem;
@@ -194,4 +191,33 @@ footer h3 {
 .card img {
     width: 10rem;
     height: 15rem;
+}
+
+@media (max-width: 768px) {
+    .createur {
+        flex-direction: column;
+    }
+
+    #container {
+        flex-direction: column;
+    }
+
+    .containerTeteLeft img {
+        max-width: 100%;
+    }
+}
+
+::-webkit-scrollbar {
+    background: white;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fffefe;
 }
